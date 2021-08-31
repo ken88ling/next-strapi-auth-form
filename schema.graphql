@@ -1,0 +1,2009 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+union Morph = Cameras | CamerasAggregator | CamerasConnection | CamerasConnectionCoordinate | CamerasConnectionCreated_at | CamerasConnectionId | CamerasConnectionModel | CamerasConnectionName | CamerasConnectionPublished_at | CamerasConnectionSerialNo | CamerasConnectionUpdated_at | CamerasGroupBy | ComponentVatesAnnotation | ComponentVatesClassification | Coordinates | CoordinatesAggregator | CoordinatesAggregatorAvg | CoordinatesAggregatorMax | CoordinatesAggregatorMin | CoordinatesAggregatorSum | CoordinatesConnection | CoordinatesConnectionCamera | CoordinatesConnectionCreated_at | CoordinatesConnectionHeight | CoordinatesConnectionId | CoordinatesConnectionLocation | CoordinatesConnectionPublished_at | CoordinatesConnectionType | CoordinatesConnectionUpdated_at | CoordinatesConnectionWidth | CoordinatesConnectionX | CoordinatesConnectionY | CoordinatesGroupBy | DetectedHistory | DetectedHistoryAggregator | DetectedHistoryConnection | DetectedHistoryConnectionCreated_at | DetectedHistoryConnectionDetected | DetectedHistoryConnectionId | DetectedHistoryConnectionIncident | DetectedHistoryConnectionPublished_at | DetectedHistoryConnectionUpdated_at | DetectedHistoryConnectionUser | DetectedHistoryGroupBy | I18NLocale | Incident | IncidentAggregator | IncidentAggregatorAvg | IncidentAggregatorMax | IncidentAggregatorMin | IncidentAggregatorSum | IncidentConnection | IncidentConnectionCamera | IncidentConnectionCreated_at | IncidentConnectionDateTime | IncidentConnectionDetected | IncidentConnectionDirection | IncidentConnectionEventId | IncidentConnectionId | IncidentConnectionIncidentAttributes | IncidentConnectionIncidentDescription | IncidentConnectionIncidentName | IncidentConnectionIncidentType | IncidentConnectionIncident_location | IncidentConnectionIsVerified | IncidentConnectionLocation | IncidentConnectionMessageType | IncidentConnectionParentEventId | IncidentConnectionRuntime | IncidentConnectionSpeed | IncidentConnectionStartDateTime | IncidentConnectionTime | IncidentConnectionTrackingId | IncidentConnectionUpdated_at | IncidentConnectionVisiblePeople | IncidentGroupBy | IncidentLocation | IncidentLocationAggregator | IncidentLocationConnection | IncidentLocationConnectionCamera | IncidentLocationConnectionCreated_at | IncidentLocationConnectionId | IncidentLocationConnectionLocation | IncidentLocationConnectionPublished_at | IncidentLocationConnectionUpdated_at | IncidentLocationGroupBy | IncidentMedia | IncidentMediaAggregator | IncidentMediaAggregatorAvg | IncidentMediaAggregatorMax | IncidentMediaAggregatorMin | IncidentMediaAggregatorSum | IncidentMediaConnection | IncidentMediaConnectionCreated_at | IncidentMediaConnectionFilename | IncidentMediaConnectionHeight | IncidentMediaConnectionId | IncidentMediaConnectionPath | IncidentMediaConnectionPublished_at | IncidentMediaConnectionTag | IncidentMediaConnectionType | IncidentMediaConnectionUpdated_at | IncidentMediaConnectionWidth | IncidentMediaConnectionX | IncidentMediaConnectionY | IncidentMediaGroupBy | Locations | LocationsAggregator | LocationsConnection | LocationsConnectionCoordinate | LocationsConnectionCreated_at | LocationsConnectionId | LocationsConnectionName | LocationsConnectionPublished_at | LocationsConnectionUpdated_at | LocationsGroupBy | Note | NoteAggregator | NoteConnection | NoteConnectionCreateDate | NoteConnectionCreated_at | NoteConnectionId | NoteConnectionIncident | NoteConnectionPublished_at | NoteConnectionText | NoteConnectionUpdated_at | NoteConnectionUsers_permissions_user | NoteGroupBy | Notification | NotificationAggregator | NotificationConnection | NotificationConnectionContent | NotificationConnectionCreated_at | NotificationConnectionId | NotificationConnectionLink | NotificationConnectionPublished_at | NotificationConnectionTitle | NotificationConnectionType | NotificationConnectionUpdated_at | NotificationGroupBy | UploadFile | UploadFileAggregator | UploadFileAggregatorAvg | UploadFileAggregatorMax | UploadFileAggregatorMin | UploadFileAggregatorSum | UploadFileConnection | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionCreated_at | UploadFileConnectionExt | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionHeight | UploadFileConnectionId | UploadFileConnectionMime | UploadFileConnectionName | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | UploadFileConnectionSize | UploadFileConnectionUpdated_at | UploadFileConnectionUrl | UploadFileConnectionWidth | UploadFileGroupBy | UserPermissionsPasswordPayload | UsersPermissionsLoginPayload | UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleAggregator | UsersPermissionsRoleConnection | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionType | UsersPermissionsRoleGroupBy | UsersPermissionsUser | UsersPermissionsUserAggregator | UsersPermissionsUserConnection | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionRole | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserGroupBy | createCameraPayload | createCoordinatePayload | createDetectedHistoryPayload | createIncidentLocationPayload | createIncidentMediaPayload | createIncidentPayload | createLocationPayload | createNotePayload | createNotificationPayload | createRolePayload | createUserPayload | deleteCameraPayload | deleteCoordinatePayload | deleteDetectedHistoryPayload | deleteFilePayload | deleteIncidentLocationPayload | deleteIncidentMediaPayload | deleteIncidentPayload | deleteLocationPayload | deleteNotePayload | deleteNotificationPayload | deleteRolePayload | deleteUserPayload | updateCameraPayload | updateCoordinatePayload | updateDetectedHistoryPayload | updateIncidentLocationPayload | updateIncidentMediaPayload | updateIncidentPayload | updateLocationPayload | updateNotePayload | updateNotificationPayload | updateRolePayload | updateUserPayload
+
+type AdminUser {
+    firstname: String!
+    id: ID!
+    lastname: String!
+    username: String
+}
+
+type Cameras {
+    coordinate: Coordinates
+    created_at: DateTime!
+    id: ID!
+    incident_locations(limit: Int, sort: String, start: Int, where: JSON): [IncidentLocation]
+    model: String
+    name: String!
+    published_at: DateTime
+    serialNo: String
+    updated_at: DateTime!
+}
+
+type CamerasAggregator {
+    count: Int
+    totalCount: Int
+}
+
+type CamerasConnection {
+    aggregate: CamerasAggregator
+    groupBy: CamerasGroupBy
+    values: [Cameras]
+}
+
+type CamerasConnectionCoordinate {
+    connection: CamerasConnection
+    key: ID
+}
+
+type CamerasConnectionCreated_at {
+    connection: CamerasConnection
+    key: DateTime
+}
+
+type CamerasConnectionId {
+    connection: CamerasConnection
+    key: ID
+}
+
+type CamerasConnectionModel {
+    connection: CamerasConnection
+    key: String
+}
+
+type CamerasConnectionName {
+    connection: CamerasConnection
+    key: String
+}
+
+type CamerasConnectionPublished_at {
+    connection: CamerasConnection
+    key: DateTime
+}
+
+type CamerasConnectionSerialNo {
+    connection: CamerasConnection
+    key: String
+}
+
+type CamerasConnectionUpdated_at {
+    connection: CamerasConnection
+    key: DateTime
+}
+
+type CamerasGroupBy {
+    coordinate: [CamerasConnectionCoordinate]
+    created_at: [CamerasConnectionCreated_at]
+    id: [CamerasConnectionId]
+    model: [CamerasConnectionModel]
+    name: [CamerasConnectionName]
+    published_at: [CamerasConnectionPublished_at]
+    serialNo: [CamerasConnectionSerialNo]
+    updated_at: [CamerasConnectionUpdated_at]
+}
+
+type ComponentVatesAnnotation {
+    h: Int
+    id: ID!
+    w: Int
+    x: Int
+    y: Int
+}
+
+type ComponentVatesClassification {
+    confidence: Float
+    id: ID!
+    type: String
+}
+
+type Coordinates {
+    camera: Cameras
+    created_at: DateTime!
+    height: Float
+    id: ID!
+    location: Locations
+    published_at: DateTime
+    type: String
+    updated_at: DateTime!
+    width: Float
+    x: Float
+    y: Float
+}
+
+type CoordinatesAggregator {
+    avg: CoordinatesAggregatorAvg
+    count: Int
+    max: CoordinatesAggregatorMax
+    min: CoordinatesAggregatorMin
+    sum: CoordinatesAggregatorSum
+    totalCount: Int
+}
+
+type CoordinatesAggregatorAvg {
+    height: Float
+    width: Float
+    x: Float
+    y: Float
+}
+
+type CoordinatesAggregatorMax {
+    height: Float
+    width: Float
+    x: Float
+    y: Float
+}
+
+type CoordinatesAggregatorMin {
+    height: Float
+    width: Float
+    x: Float
+    y: Float
+}
+
+type CoordinatesAggregatorSum {
+    height: Float
+    width: Float
+    x: Float
+    y: Float
+}
+
+type CoordinatesConnection {
+    aggregate: CoordinatesAggregator
+    groupBy: CoordinatesGroupBy
+    values: [Coordinates]
+}
+
+type CoordinatesConnectionCamera {
+    connection: CoordinatesConnection
+    key: ID
+}
+
+type CoordinatesConnectionCreated_at {
+    connection: CoordinatesConnection
+    key: DateTime
+}
+
+type CoordinatesConnectionHeight {
+    connection: CoordinatesConnection
+    key: Float
+}
+
+type CoordinatesConnectionId {
+    connection: CoordinatesConnection
+    key: ID
+}
+
+type CoordinatesConnectionLocation {
+    connection: CoordinatesConnection
+    key: ID
+}
+
+type CoordinatesConnectionPublished_at {
+    connection: CoordinatesConnection
+    key: DateTime
+}
+
+type CoordinatesConnectionType {
+    connection: CoordinatesConnection
+    key: String
+}
+
+type CoordinatesConnectionUpdated_at {
+    connection: CoordinatesConnection
+    key: DateTime
+}
+
+type CoordinatesConnectionWidth {
+    connection: CoordinatesConnection
+    key: Float
+}
+
+type CoordinatesConnectionX {
+    connection: CoordinatesConnection
+    key: Float
+}
+
+type CoordinatesConnectionY {
+    connection: CoordinatesConnection
+    key: Float
+}
+
+type CoordinatesGroupBy {
+    camera: [CoordinatesConnectionCamera]
+    created_at: [CoordinatesConnectionCreated_at]
+    height: [CoordinatesConnectionHeight]
+    id: [CoordinatesConnectionId]
+    location: [CoordinatesConnectionLocation]
+    published_at: [CoordinatesConnectionPublished_at]
+    type: [CoordinatesConnectionType]
+    updated_at: [CoordinatesConnectionUpdated_at]
+    width: [CoordinatesConnectionWidth]
+    x: [CoordinatesConnectionX]
+    y: [CoordinatesConnectionY]
+}
+
+type DetectedHistory {
+    created_at: DateTime!
+    detected: String
+    id: ID!
+    incident: Incident
+    published_at: DateTime
+    updated_at: DateTime!
+    user: UsersPermissionsUser
+}
+
+type DetectedHistoryAggregator {
+    count: Int
+    totalCount: Int
+}
+
+type DetectedHistoryConnection {
+    aggregate: DetectedHistoryAggregator
+    groupBy: DetectedHistoryGroupBy
+    values: [DetectedHistory]
+}
+
+type DetectedHistoryConnectionCreated_at {
+    connection: DetectedHistoryConnection
+    key: DateTime
+}
+
+type DetectedHistoryConnectionDetected {
+    connection: DetectedHistoryConnection
+    key: String
+}
+
+type DetectedHistoryConnectionId {
+    connection: DetectedHistoryConnection
+    key: ID
+}
+
+type DetectedHistoryConnectionIncident {
+    connection: DetectedHistoryConnection
+    key: ID
+}
+
+type DetectedHistoryConnectionPublished_at {
+    connection: DetectedHistoryConnection
+    key: DateTime
+}
+
+type DetectedHistoryConnectionUpdated_at {
+    connection: DetectedHistoryConnection
+    key: DateTime
+}
+
+type DetectedHistoryConnectionUser {
+    connection: DetectedHistoryConnection
+    key: ID
+}
+
+type DetectedHistoryGroupBy {
+    created_at: [DetectedHistoryConnectionCreated_at]
+    detected: [DetectedHistoryConnectionDetected]
+    id: [DetectedHistoryConnectionId]
+    incident: [DetectedHistoryConnectionIncident]
+    published_at: [DetectedHistoryConnectionPublished_at]
+    updated_at: [DetectedHistoryConnectionUpdated_at]
+    user: [DetectedHistoryConnectionUser]
+}
+
+type I18NLocale {
+    code: String
+    created_at: DateTime!
+    id: ID!
+    name: String
+    updated_at: DateTime!
+}
+
+type Incident {
+    camera: String
+    created_at: DateTime!
+    dateTime: DateTime
+    detected: String
+    detected_histories(limit: Int, sort: String, start: Int, where: JSON): [DetectedHistory]
+    direction: String
+    eventId: String
+    id: ID!
+    imgs(limit: Int, sort: String, start: Int, where: JSON): [IncidentMedia]
+    incidentAttributes: JSON
+    incidentDescription: String
+    incidentName: String
+    incidentType: String
+    incident_location: IncidentLocation
+    isVerified: Boolean
+    location: String
+    messageType: String
+    notes(limit: Int, sort: String, start: Int, where: JSON): [Note]
+    parentEventId: String
+    runtime: Float
+    speed: String
+    startDateTime: DateTime
+    time: DateTime
+    trackingId: String
+    updated_at: DateTime!
+    visiblePeople: Int
+}
+
+type IncidentAggregator {
+    avg: IncidentAggregatorAvg
+    count: Int
+    max: IncidentAggregatorMax
+    min: IncidentAggregatorMin
+    sum: IncidentAggregatorSum
+    totalCount: Int
+}
+
+type IncidentAggregatorAvg {
+    runtime: Float
+    visiblePeople: Float
+}
+
+type IncidentAggregatorMax {
+    runtime: Float
+    visiblePeople: Float
+}
+
+type IncidentAggregatorMin {
+    runtime: Float
+    visiblePeople: Float
+}
+
+type IncidentAggregatorSum {
+    runtime: Float
+    visiblePeople: Float
+}
+
+type IncidentConnection {
+    aggregate: IncidentAggregator
+    groupBy: IncidentGroupBy
+    values: [Incident]
+}
+
+type IncidentConnectionCamera {
+    connection: IncidentConnection
+    key: String
+}
+
+type IncidentConnectionCreated_at {
+    connection: IncidentConnection
+    key: DateTime
+}
+
+type IncidentConnectionDateTime {
+    connection: IncidentConnection
+    key: DateTime
+}
+
+type IncidentConnectionDetected {
+    connection: IncidentConnection
+    key: String
+}
+
+type IncidentConnectionDirection {
+    connection: IncidentConnection
+    key: String
+}
+
+type IncidentConnectionEventId {
+    connection: IncidentConnection
+    key: String
+}
+
+type IncidentConnectionId {
+    connection: IncidentConnection
+    key: ID
+}
+
+type IncidentConnectionIncidentAttributes {
+    connection: IncidentConnection
+    key: JSON
+}
+
+type IncidentConnectionIncidentDescription {
+    connection: IncidentConnection
+    key: String
+}
+
+type IncidentConnectionIncidentName {
+    connection: IncidentConnection
+    key: String
+}
+
+type IncidentConnectionIncidentType {
+    connection: IncidentConnection
+    key: String
+}
+
+type IncidentConnectionIncident_location {
+    connection: IncidentConnection
+    key: ID
+}
+
+type IncidentConnectionIsVerified {
+    connection: IncidentConnection
+    key: Boolean
+}
+
+type IncidentConnectionLocation {
+    connection: IncidentConnection
+    key: String
+}
+
+type IncidentConnectionMessageType {
+    connection: IncidentConnection
+    key: String
+}
+
+type IncidentConnectionParentEventId {
+    connection: IncidentConnection
+    key: String
+}
+
+type IncidentConnectionRuntime {
+    connection: IncidentConnection
+    key: Float
+}
+
+type IncidentConnectionSpeed {
+    connection: IncidentConnection
+    key: String
+}
+
+type IncidentConnectionStartDateTime {
+    connection: IncidentConnection
+    key: DateTime
+}
+
+type IncidentConnectionTime {
+    connection: IncidentConnection
+    key: DateTime
+}
+
+type IncidentConnectionTrackingId {
+    connection: IncidentConnection
+    key: String
+}
+
+type IncidentConnectionUpdated_at {
+    connection: IncidentConnection
+    key: DateTime
+}
+
+type IncidentConnectionVisiblePeople {
+    connection: IncidentConnection
+    key: Int
+}
+
+type IncidentGroupBy {
+    camera: [IncidentConnectionCamera]
+    created_at: [IncidentConnectionCreated_at]
+    dateTime: [IncidentConnectionDateTime]
+    detected: [IncidentConnectionDetected]
+    direction: [IncidentConnectionDirection]
+    eventId: [IncidentConnectionEventId]
+    id: [IncidentConnectionId]
+    incidentAttributes: [IncidentConnectionIncidentAttributes]
+    incidentDescription: [IncidentConnectionIncidentDescription]
+    incidentName: [IncidentConnectionIncidentName]
+    incidentType: [IncidentConnectionIncidentType]
+    incident_location: [IncidentConnectionIncident_location]
+    isVerified: [IncidentConnectionIsVerified]
+    location: [IncidentConnectionLocation]
+    messageType: [IncidentConnectionMessageType]
+    parentEventId: [IncidentConnectionParentEventId]
+    runtime: [IncidentConnectionRuntime]
+    speed: [IncidentConnectionSpeed]
+    startDateTime: [IncidentConnectionStartDateTime]
+    time: [IncidentConnectionTime]
+    trackingId: [IncidentConnectionTrackingId]
+    updated_at: [IncidentConnectionUpdated_at]
+    visiblePeople: [IncidentConnectionVisiblePeople]
+}
+
+type IncidentLocation {
+    camera: Cameras
+    created_at: DateTime!
+    id: ID!
+    location: Locations
+    published_at: DateTime
+    updated_at: DateTime!
+}
+
+type IncidentLocationAggregator {
+    count: Int
+    totalCount: Int
+}
+
+type IncidentLocationConnection {
+    aggregate: IncidentLocationAggregator
+    groupBy: IncidentLocationGroupBy
+    values: [IncidentLocation]
+}
+
+type IncidentLocationConnectionCamera {
+    connection: IncidentLocationConnection
+    key: ID
+}
+
+type IncidentLocationConnectionCreated_at {
+    connection: IncidentLocationConnection
+    key: DateTime
+}
+
+type IncidentLocationConnectionId {
+    connection: IncidentLocationConnection
+    key: ID
+}
+
+type IncidentLocationConnectionLocation {
+    connection: IncidentLocationConnection
+    key: ID
+}
+
+type IncidentLocationConnectionPublished_at {
+    connection: IncidentLocationConnection
+    key: DateTime
+}
+
+type IncidentLocationConnectionUpdated_at {
+    connection: IncidentLocationConnection
+    key: DateTime
+}
+
+type IncidentLocationGroupBy {
+    camera: [IncidentLocationConnectionCamera]
+    created_at: [IncidentLocationConnectionCreated_at]
+    id: [IncidentLocationConnectionId]
+    location: [IncidentLocationConnectionLocation]
+    published_at: [IncidentLocationConnectionPublished_at]
+    updated_at: [IncidentLocationConnectionUpdated_at]
+}
+
+type IncidentMedia {
+    created_at: DateTime!
+    filename: String
+    height: Float
+    id: ID!
+    path: String
+    published_at: DateTime
+    tag: String
+    type: String
+    updated_at: DateTime!
+    width: Float
+    x: Float
+    y: Float
+}
+
+type IncidentMediaAggregator {
+    avg: IncidentMediaAggregatorAvg
+    count: Int
+    max: IncidentMediaAggregatorMax
+    min: IncidentMediaAggregatorMin
+    sum: IncidentMediaAggregatorSum
+    totalCount: Int
+}
+
+type IncidentMediaAggregatorAvg {
+    height: Float
+    width: Float
+    x: Float
+    y: Float
+}
+
+type IncidentMediaAggregatorMax {
+    height: Float
+    width: Float
+    x: Float
+    y: Float
+}
+
+type IncidentMediaAggregatorMin {
+    height: Float
+    width: Float
+    x: Float
+    y: Float
+}
+
+type IncidentMediaAggregatorSum {
+    height: Float
+    width: Float
+    x: Float
+    y: Float
+}
+
+type IncidentMediaConnection {
+    aggregate: IncidentMediaAggregator
+    groupBy: IncidentMediaGroupBy
+    values: [IncidentMedia]
+}
+
+type IncidentMediaConnectionCreated_at {
+    connection: IncidentMediaConnection
+    key: DateTime
+}
+
+type IncidentMediaConnectionFilename {
+    connection: IncidentMediaConnection
+    key: String
+}
+
+type IncidentMediaConnectionHeight {
+    connection: IncidentMediaConnection
+    key: Float
+}
+
+type IncidentMediaConnectionId {
+    connection: IncidentMediaConnection
+    key: ID
+}
+
+type IncidentMediaConnectionPath {
+    connection: IncidentMediaConnection
+    key: String
+}
+
+type IncidentMediaConnectionPublished_at {
+    connection: IncidentMediaConnection
+    key: DateTime
+}
+
+type IncidentMediaConnectionTag {
+    connection: IncidentMediaConnection
+    key: String
+}
+
+type IncidentMediaConnectionType {
+    connection: IncidentMediaConnection
+    key: String
+}
+
+type IncidentMediaConnectionUpdated_at {
+    connection: IncidentMediaConnection
+    key: DateTime
+}
+
+type IncidentMediaConnectionWidth {
+    connection: IncidentMediaConnection
+    key: Float
+}
+
+type IncidentMediaConnectionX {
+    connection: IncidentMediaConnection
+    key: Float
+}
+
+type IncidentMediaConnectionY {
+    connection: IncidentMediaConnection
+    key: Float
+}
+
+type IncidentMediaGroupBy {
+    created_at: [IncidentMediaConnectionCreated_at]
+    filename: [IncidentMediaConnectionFilename]
+    height: [IncidentMediaConnectionHeight]
+    id: [IncidentMediaConnectionId]
+    path: [IncidentMediaConnectionPath]
+    published_at: [IncidentMediaConnectionPublished_at]
+    tag: [IncidentMediaConnectionTag]
+    type: [IncidentMediaConnectionType]
+    updated_at: [IncidentMediaConnectionUpdated_at]
+    width: [IncidentMediaConnectionWidth]
+    x: [IncidentMediaConnectionX]
+    y: [IncidentMediaConnectionY]
+}
+
+type Locations {
+    coordinate: Coordinates
+    created_at: DateTime!
+    id: ID!
+    incident_locations(limit: Int, sort: String, start: Int, where: JSON): [IncidentLocation]
+    name: String!
+    published_at: DateTime
+    updated_at: DateTime!
+}
+
+type LocationsAggregator {
+    count: Int
+    totalCount: Int
+}
+
+type LocationsConnection {
+    aggregate: LocationsAggregator
+    groupBy: LocationsGroupBy
+    values: [Locations]
+}
+
+type LocationsConnectionCoordinate {
+    connection: LocationsConnection
+    key: ID
+}
+
+type LocationsConnectionCreated_at {
+    connection: LocationsConnection
+    key: DateTime
+}
+
+type LocationsConnectionId {
+    connection: LocationsConnection
+    key: ID
+}
+
+type LocationsConnectionName {
+    connection: LocationsConnection
+    key: String
+}
+
+type LocationsConnectionPublished_at {
+    connection: LocationsConnection
+    key: DateTime
+}
+
+type LocationsConnectionUpdated_at {
+    connection: LocationsConnection
+    key: DateTime
+}
+
+type LocationsGroupBy {
+    coordinate: [LocationsConnectionCoordinate]
+    created_at: [LocationsConnectionCreated_at]
+    id: [LocationsConnectionId]
+    name: [LocationsConnectionName]
+    published_at: [LocationsConnectionPublished_at]
+    updated_at: [LocationsConnectionUpdated_at]
+}
+
+type Mutation {
+    createCamera(input: createCameraInput): createCameraPayload
+    createCoordinate(input: createCoordinateInput): createCoordinatePayload
+    createDetectedHistory(input: createDetectedHistoryInput): createDetectedHistoryPayload
+    createIncident(input: createIncidentInput): createIncidentPayload
+    createIncidentLocation(input: createIncidentLocationInput): createIncidentLocationPayload
+    createIncidentMedia(input: createIncidentMediaInput): createIncidentMediaPayload
+    createLocation(input: createLocationInput): createLocationPayload
+    createNote(input: createNoteInput): createNotePayload
+    createNotification(input: createNotificationInput): createNotificationPayload
+    "Create a new role"
+    createRole(input: createRoleInput): createRolePayload
+    "Create a new user"
+    createUser(input: createUserInput): createUserPayload
+    deleteCamera(input: deleteCameraInput): deleteCameraPayload
+    deleteCoordinate(input: deleteCoordinateInput): deleteCoordinatePayload
+    deleteDetectedHistory(input: deleteDetectedHistoryInput): deleteDetectedHistoryPayload
+    "Delete one file"
+    deleteFile(input: deleteFileInput): deleteFilePayload
+    deleteIncident(input: deleteIncidentInput): deleteIncidentPayload
+    deleteIncidentLocation(input: deleteIncidentLocationInput): deleteIncidentLocationPayload
+    deleteIncidentMedia(input: deleteIncidentMediaInput): deleteIncidentMediaPayload
+    deleteLocation(input: deleteLocationInput): deleteLocationPayload
+    deleteNote(input: deleteNoteInput): deleteNotePayload
+    deleteNotification(input: deleteNotificationInput): deleteNotificationPayload
+    "Delete an existing role"
+    deleteRole(input: deleteRoleInput): deleteRolePayload
+    "Delete an existing user"
+    deleteUser(input: deleteUserInput): deleteUserPayload
+    emailConfirmation(confirmation: String!): UsersPermissionsLoginPayload
+    forgotPassword(email: String!): UserPermissionsPasswordPayload
+    login(input: UsersPermissionsLoginInput!): UsersPermissionsLoginPayload!
+    multipleUpload(field: String, files: [Upload]!, ref: String, refId: ID, source: String): [UploadFile]!
+    register(input: UsersPermissionsRegisterInput!): UsersPermissionsLoginPayload!
+    resetPassword(code: String!, password: String!, passwordConfirmation: String!): UsersPermissionsLoginPayload
+    updateCamera(input: updateCameraInput): updateCameraPayload
+    updateCoordinate(input: updateCoordinateInput): updateCoordinatePayload
+    updateDetectedHistory(input: updateDetectedHistoryInput): updateDetectedHistoryPayload
+    updateFileInfo(id: ID!, info: FileInfoInput!): UploadFile!
+    updateIncident(input: updateIncidentInput): updateIncidentPayload
+    updateIncidentLocation(input: updateIncidentLocationInput): updateIncidentLocationPayload
+    updateIncidentMedia(input: updateIncidentMediaInput): updateIncidentMediaPayload
+    updateLocation(input: updateLocationInput): updateLocationPayload
+    updateNote(input: updateNoteInput): updateNotePayload
+    updateNotification(input: updateNotificationInput): updateNotificationPayload
+    "Update an existing role"
+    updateRole(input: updateRoleInput): updateRolePayload
+    "Update an existing user"
+    updateUser(input: updateUserInput): updateUserPayload
+    upload(field: String, file: Upload!, info: FileInfoInput, ref: String, refId: ID, source: String): UploadFile!
+}
+
+type Note {
+    createDate: DateTime
+    created_at: DateTime!
+    id: ID!
+    incident: Incident
+    published_at: DateTime
+    text: String
+    updated_at: DateTime!
+    users_permissions_user: UsersPermissionsUser
+}
+
+type NoteAggregator {
+    count: Int
+    totalCount: Int
+}
+
+type NoteConnection {
+    aggregate: NoteAggregator
+    groupBy: NoteGroupBy
+    values: [Note]
+}
+
+type NoteConnectionCreateDate {
+    connection: NoteConnection
+    key: DateTime
+}
+
+type NoteConnectionCreated_at {
+    connection: NoteConnection
+    key: DateTime
+}
+
+type NoteConnectionId {
+    connection: NoteConnection
+    key: ID
+}
+
+type NoteConnectionIncident {
+    connection: NoteConnection
+    key: ID
+}
+
+type NoteConnectionPublished_at {
+    connection: NoteConnection
+    key: DateTime
+}
+
+type NoteConnectionText {
+    connection: NoteConnection
+    key: String
+}
+
+type NoteConnectionUpdated_at {
+    connection: NoteConnection
+    key: DateTime
+}
+
+type NoteConnectionUsers_permissions_user {
+    connection: NoteConnection
+    key: ID
+}
+
+type NoteGroupBy {
+    createDate: [NoteConnectionCreateDate]
+    created_at: [NoteConnectionCreated_at]
+    id: [NoteConnectionId]
+    incident: [NoteConnectionIncident]
+    published_at: [NoteConnectionPublished_at]
+    text: [NoteConnectionText]
+    updated_at: [NoteConnectionUpdated_at]
+    users_permissions_user: [NoteConnectionUsers_permissions_user]
+}
+
+type Notification {
+    content: String
+    created_at: DateTime!
+    id: ID!
+    link: String
+    published_at: DateTime
+    title: String
+    type: String
+    updated_at: DateTime!
+}
+
+type NotificationAggregator {
+    count: Int
+    totalCount: Int
+}
+
+type NotificationConnection {
+    aggregate: NotificationAggregator
+    groupBy: NotificationGroupBy
+    values: [Notification]
+}
+
+type NotificationConnectionContent {
+    connection: NotificationConnection
+    key: String
+}
+
+type NotificationConnectionCreated_at {
+    connection: NotificationConnection
+    key: DateTime
+}
+
+type NotificationConnectionId {
+    connection: NotificationConnection
+    key: ID
+}
+
+type NotificationConnectionLink {
+    connection: NotificationConnection
+    key: String
+}
+
+type NotificationConnectionPublished_at {
+    connection: NotificationConnection
+    key: DateTime
+}
+
+type NotificationConnectionTitle {
+    connection: NotificationConnection
+    key: String
+}
+
+type NotificationConnectionType {
+    connection: NotificationConnection
+    key: String
+}
+
+type NotificationConnectionUpdated_at {
+    connection: NotificationConnection
+    key: DateTime
+}
+
+type NotificationGroupBy {
+    content: [NotificationConnectionContent]
+    created_at: [NotificationConnectionCreated_at]
+    id: [NotificationConnectionId]
+    link: [NotificationConnectionLink]
+    published_at: [NotificationConnectionPublished_at]
+    title: [NotificationConnectionTitle]
+    type: [NotificationConnectionType]
+    updated_at: [NotificationConnectionUpdated_at]
+}
+
+type Query {
+    camera(id: ID!, publicationState: PublicationState): Cameras
+    cameras(limit: Int, publicationState: PublicationState, sort: String, start: Int, where: JSON): [Cameras]
+    camerasConnection(limit: Int, sort: String, start: Int, where: JSON): CamerasConnection
+    coordinate(id: ID!, publicationState: PublicationState): Coordinates
+    coordinates(limit: Int, publicationState: PublicationState, sort: String, start: Int, where: JSON): [Coordinates]
+    coordinatesConnection(limit: Int, sort: String, start: Int, where: JSON): CoordinatesConnection
+    detectedHistories(limit: Int, publicationState: PublicationState, sort: String, start: Int, where: JSON): [DetectedHistory]
+    detectedHistoriesConnection(limit: Int, sort: String, start: Int, where: JSON): DetectedHistoryConnection
+    detectedHistory(id: ID!, publicationState: PublicationState): DetectedHistory
+    files(limit: Int, publicationState: PublicationState, sort: String, start: Int, where: JSON): [UploadFile]
+    filesConnection(limit: Int, sort: String, start: Int, where: JSON): UploadFileConnection
+    incident(id: ID!, publicationState: PublicationState): Incident
+    incidentLocation(id: ID!, publicationState: PublicationState): IncidentLocation
+    incidentLocations(limit: Int, publicationState: PublicationState, sort: String, start: Int, where: JSON): [IncidentLocation]
+    incidentLocationsConnection(limit: Int, sort: String, start: Int, where: JSON): IncidentLocationConnection
+    incidentMedia(id: ID!, publicationState: PublicationState): IncidentMedia
+    incidentMedias(limit: Int, publicationState: PublicationState, sort: String, start: Int, where: JSON): [IncidentMedia]
+    incidentMediasConnection(limit: Int, sort: String, start: Int, where: JSON): IncidentMediaConnection
+    incidents(limit: Int, publicationState: PublicationState, sort: String, start: Int, where: JSON): [Incident]
+    incidentsConnection(limit: Int, sort: String, start: Int, where: JSON): IncidentConnection
+    location(id: ID!, publicationState: PublicationState): Locations
+    locations(limit: Int, publicationState: PublicationState, sort: String, start: Int, where: JSON): [Locations]
+    locationsConnection(limit: Int, sort: String, start: Int, where: JSON): LocationsConnection
+    me: UsersPermissionsMe
+    note(id: ID!, publicationState: PublicationState): Note
+    notes(limit: Int, publicationState: PublicationState, sort: String, start: Int, where: JSON): [Note]
+    notesConnection(limit: Int, sort: String, start: Int, where: JSON): NoteConnection
+    notification(id: ID!, publicationState: PublicationState): Notification
+    notifications(limit: Int, publicationState: PublicationState, sort: String, start: Int, where: JSON): [Notification]
+    notificationsConnection(limit: Int, sort: String, start: Int, where: JSON): NotificationConnection
+    role(id: ID!, publicationState: PublicationState): UsersPermissionsRole
+    "Retrieve all the existing roles. You can't apply filters on this query."
+    roles(limit: Int, publicationState: PublicationState, sort: String, start: Int, where: JSON): [UsersPermissionsRole]
+    rolesConnection(limit: Int, sort: String, start: Int, where: JSON): UsersPermissionsRoleConnection
+    user(id: ID!, publicationState: PublicationState): UsersPermissionsUser
+    users(limit: Int, publicationState: PublicationState, sort: String, start: Int, where: JSON): [UsersPermissionsUser]
+    usersConnection(limit: Int, sort: String, start: Int, where: JSON): UsersPermissionsUserConnection
+}
+
+type UploadFile {
+    alternativeText: String
+    caption: String
+    created_at: DateTime!
+    ext: String
+    formats: JSON
+    hash: String!
+    height: Int
+    id: ID!
+    mime: String!
+    name: String!
+    previewUrl: String
+    provider: String!
+    provider_metadata: JSON
+    related(limit: Int, sort: String, start: Int, where: JSON): [Morph]
+    size: Float!
+    updated_at: DateTime!
+    url: String!
+    width: Int
+}
+
+type UploadFileAggregator {
+    avg: UploadFileAggregatorAvg
+    count: Int
+    max: UploadFileAggregatorMax
+    min: UploadFileAggregatorMin
+    sum: UploadFileAggregatorSum
+    totalCount: Int
+}
+
+type UploadFileAggregatorAvg {
+    height: Float
+    size: Float
+    width: Float
+}
+
+type UploadFileAggregatorMax {
+    height: Float
+    size: Float
+    width: Float
+}
+
+type UploadFileAggregatorMin {
+    height: Float
+    size: Float
+    width: Float
+}
+
+type UploadFileAggregatorSum {
+    height: Float
+    size: Float
+    width: Float
+}
+
+type UploadFileConnection {
+    aggregate: UploadFileAggregator
+    groupBy: UploadFileGroupBy
+    values: [UploadFile]
+}
+
+type UploadFileConnectionAlternativeText {
+    connection: UploadFileConnection
+    key: String
+}
+
+type UploadFileConnectionCaption {
+    connection: UploadFileConnection
+    key: String
+}
+
+type UploadFileConnectionCreated_at {
+    connection: UploadFileConnection
+    key: DateTime
+}
+
+type UploadFileConnectionExt {
+    connection: UploadFileConnection
+    key: String
+}
+
+type UploadFileConnectionFormats {
+    connection: UploadFileConnection
+    key: JSON
+}
+
+type UploadFileConnectionHash {
+    connection: UploadFileConnection
+    key: String
+}
+
+type UploadFileConnectionHeight {
+    connection: UploadFileConnection
+    key: Int
+}
+
+type UploadFileConnectionId {
+    connection: UploadFileConnection
+    key: ID
+}
+
+type UploadFileConnectionMime {
+    connection: UploadFileConnection
+    key: String
+}
+
+type UploadFileConnectionName {
+    connection: UploadFileConnection
+    key: String
+}
+
+type UploadFileConnectionPreviewUrl {
+    connection: UploadFileConnection
+    key: String
+}
+
+type UploadFileConnectionProvider {
+    connection: UploadFileConnection
+    key: String
+}
+
+type UploadFileConnectionProvider_metadata {
+    connection: UploadFileConnection
+    key: JSON
+}
+
+type UploadFileConnectionSize {
+    connection: UploadFileConnection
+    key: Float
+}
+
+type UploadFileConnectionUpdated_at {
+    connection: UploadFileConnection
+    key: DateTime
+}
+
+type UploadFileConnectionUrl {
+    connection: UploadFileConnection
+    key: String
+}
+
+type UploadFileConnectionWidth {
+    connection: UploadFileConnection
+    key: Int
+}
+
+type UploadFileGroupBy {
+    alternativeText: [UploadFileConnectionAlternativeText]
+    caption: [UploadFileConnectionCaption]
+    created_at: [UploadFileConnectionCreated_at]
+    ext: [UploadFileConnectionExt]
+    formats: [UploadFileConnectionFormats]
+    hash: [UploadFileConnectionHash]
+    height: [UploadFileConnectionHeight]
+    id: [UploadFileConnectionId]
+    mime: [UploadFileConnectionMime]
+    name: [UploadFileConnectionName]
+    previewUrl: [UploadFileConnectionPreviewUrl]
+    provider: [UploadFileConnectionProvider]
+    provider_metadata: [UploadFileConnectionProvider_metadata]
+    size: [UploadFileConnectionSize]
+    updated_at: [UploadFileConnectionUpdated_at]
+    url: [UploadFileConnectionUrl]
+    width: [UploadFileConnectionWidth]
+}
+
+type UserPermissionsPasswordPayload {
+    ok: Boolean!
+}
+
+type UsersPermissionsLoginPayload {
+    jwt: String
+    user: UsersPermissionsMe!
+}
+
+type UsersPermissionsMe {
+    blocked: Boolean
+    confirmed: Boolean
+    email: String!
+    id: ID!
+    role: UsersPermissionsMeRole
+    username: String!
+}
+
+type UsersPermissionsMeRole {
+    description: String
+    id: ID!
+    name: String!
+    type: String
+}
+
+type UsersPermissionsPermission {
+    action: String!
+    controller: String!
+    enabled: Boolean!
+    id: ID!
+    policy: String
+    role: UsersPermissionsRole
+    type: String!
+}
+
+type UsersPermissionsRole {
+    description: String
+    id: ID!
+    name: String!
+    permissions(limit: Int, sort: String, start: Int, where: JSON): [UsersPermissionsPermission]
+    type: String
+    users(limit: Int, sort: String, start: Int, where: JSON): [UsersPermissionsUser]
+}
+
+type UsersPermissionsRoleAggregator {
+    count: Int
+    totalCount: Int
+}
+
+type UsersPermissionsRoleConnection {
+    aggregate: UsersPermissionsRoleAggregator
+    groupBy: UsersPermissionsRoleGroupBy
+    values: [UsersPermissionsRole]
+}
+
+type UsersPermissionsRoleConnectionDescription {
+    connection: UsersPermissionsRoleConnection
+    key: String
+}
+
+type UsersPermissionsRoleConnectionId {
+    connection: UsersPermissionsRoleConnection
+    key: ID
+}
+
+type UsersPermissionsRoleConnectionName {
+    connection: UsersPermissionsRoleConnection
+    key: String
+}
+
+type UsersPermissionsRoleConnectionType {
+    connection: UsersPermissionsRoleConnection
+    key: String
+}
+
+type UsersPermissionsRoleGroupBy {
+    description: [UsersPermissionsRoleConnectionDescription]
+    id: [UsersPermissionsRoleConnectionId]
+    name: [UsersPermissionsRoleConnectionName]
+    type: [UsersPermissionsRoleConnectionType]
+}
+
+type UsersPermissionsUser {
+    blocked: Boolean
+    confirmed: Boolean
+    created_at: DateTime!
+    detected_histories(limit: Int, sort: String, start: Int, where: JSON): [DetectedHistory]
+    email: String!
+    id: ID!
+    provider: String
+    role: UsersPermissionsRole
+    updated_at: DateTime!
+    username: String!
+}
+
+type UsersPermissionsUserAggregator {
+    count: Int
+    totalCount: Int
+}
+
+type UsersPermissionsUserConnection {
+    aggregate: UsersPermissionsUserAggregator
+    groupBy: UsersPermissionsUserGroupBy
+    values: [UsersPermissionsUser]
+}
+
+type UsersPermissionsUserConnectionBlocked {
+    connection: UsersPermissionsUserConnection
+    key: Boolean
+}
+
+type UsersPermissionsUserConnectionConfirmed {
+    connection: UsersPermissionsUserConnection
+    key: Boolean
+}
+
+type UsersPermissionsUserConnectionCreated_at {
+    connection: UsersPermissionsUserConnection
+    key: DateTime
+}
+
+type UsersPermissionsUserConnectionEmail {
+    connection: UsersPermissionsUserConnection
+    key: String
+}
+
+type UsersPermissionsUserConnectionId {
+    connection: UsersPermissionsUserConnection
+    key: ID
+}
+
+type UsersPermissionsUserConnectionProvider {
+    connection: UsersPermissionsUserConnection
+    key: String
+}
+
+type UsersPermissionsUserConnectionRole {
+    connection: UsersPermissionsUserConnection
+    key: ID
+}
+
+type UsersPermissionsUserConnectionUpdated_at {
+    connection: UsersPermissionsUserConnection
+    key: DateTime
+}
+
+type UsersPermissionsUserConnectionUsername {
+    connection: UsersPermissionsUserConnection
+    key: String
+}
+
+type UsersPermissionsUserGroupBy {
+    blocked: [UsersPermissionsUserConnectionBlocked]
+    confirmed: [UsersPermissionsUserConnectionConfirmed]
+    created_at: [UsersPermissionsUserConnectionCreated_at]
+    email: [UsersPermissionsUserConnectionEmail]
+    id: [UsersPermissionsUserConnectionId]
+    provider: [UsersPermissionsUserConnectionProvider]
+    role: [UsersPermissionsUserConnectionRole]
+    updated_at: [UsersPermissionsUserConnectionUpdated_at]
+    username: [UsersPermissionsUserConnectionUsername]
+}
+
+type createCameraPayload {
+    camera: Cameras
+}
+
+type createCoordinatePayload {
+    coordinate: Coordinates
+}
+
+type createDetectedHistoryPayload {
+    detectedHistory: DetectedHistory
+}
+
+type createIncidentLocationPayload {
+    incidentLocation: IncidentLocation
+}
+
+type createIncidentMediaPayload {
+    incidentMedia: IncidentMedia
+}
+
+type createIncidentPayload {
+    incident: Incident
+}
+
+type createLocationPayload {
+    location: Locations
+}
+
+type createNotePayload {
+    note: Note
+}
+
+type createNotificationPayload {
+    notification: Notification
+}
+
+type createRolePayload {
+    role: UsersPermissionsRole
+}
+
+type createUserPayload {
+    user: UsersPermissionsUser
+}
+
+type deleteCameraPayload {
+    camera: Cameras
+}
+
+type deleteCoordinatePayload {
+    coordinate: Coordinates
+}
+
+type deleteDetectedHistoryPayload {
+    detectedHistory: DetectedHistory
+}
+
+type deleteFilePayload {
+    file: UploadFile
+}
+
+type deleteIncidentLocationPayload {
+    incidentLocation: IncidentLocation
+}
+
+type deleteIncidentMediaPayload {
+    incidentMedia: IncidentMedia
+}
+
+type deleteIncidentPayload {
+    incident: Incident
+}
+
+type deleteLocationPayload {
+    location: Locations
+}
+
+type deleteNotePayload {
+    note: Note
+}
+
+type deleteNotificationPayload {
+    notification: Notification
+}
+
+type deleteRolePayload {
+    role: UsersPermissionsRole
+}
+
+type deleteUserPayload {
+    user: UsersPermissionsUser
+}
+
+type updateCameraPayload {
+    camera: Cameras
+}
+
+type updateCoordinatePayload {
+    coordinate: Coordinates
+}
+
+type updateDetectedHistoryPayload {
+    detectedHistory: DetectedHistory
+}
+
+type updateIncidentLocationPayload {
+    incidentLocation: IncidentLocation
+}
+
+type updateIncidentMediaPayload {
+    incidentMedia: IncidentMedia
+}
+
+type updateIncidentPayload {
+    incident: Incident
+}
+
+type updateLocationPayload {
+    location: Locations
+}
+
+type updateNotePayload {
+    note: Note
+}
+
+type updateNotificationPayload {
+    notification: Notification
+}
+
+type updateRolePayload {
+    role: UsersPermissionsRole
+}
+
+type updateUserPayload {
+    user: UsersPermissionsUser
+}
+
+enum PublicationState {
+    LIVE
+    PREVIEW
+}
+
+input CameraInput {
+    coordinate: ID
+    created_by: ID
+    incident_locations: [ID]
+    model: String
+    name: String!
+    published_at: DateTime
+    serialNo: String
+    updated_by: ID
+}
+
+input ComponentVatesAnnotationInput {
+    h: Int
+    w: Int
+    x: Int
+    y: Int
+}
+
+input ComponentVatesClassificationInput {
+    confidence: Float
+    type: String
+}
+
+input CoordinateInput {
+    camera: ID
+    created_by: ID
+    height: Float
+    location: ID
+    published_at: DateTime
+    type: String
+    updated_by: ID
+    width: Float
+    x: Float
+    y: Float
+}
+
+input DetectedHistoryInput {
+    created_by: ID
+    detected: String
+    incident: ID
+    published_at: DateTime
+    updated_by: ID
+    user: ID
+}
+
+input FileInfoInput {
+    alternativeText: String
+    caption: String
+    name: String
+}
+
+input FileInput {
+    alternativeText: String
+    caption: String
+    created_by: ID
+    ext: String
+    formats: JSON
+    hash: String!
+    height: Int
+    mime: String!
+    name: String!
+    previewUrl: String
+    provider: String!
+    provider_metadata: JSON
+    related: [ID]
+    size: Float!
+    updated_by: ID
+    url: String!
+    width: Int
+}
+
+input IncidentInput {
+    camera: String
+    created_by: ID
+    dateTime: DateTime
+    detected: String
+    detected_histories: [ID]
+    direction: String
+    eventId: String
+    imgs: [ID]
+    incidentAttributes: JSON
+    incidentDescription: String
+    incidentName: String
+    incidentType: String
+    incident_location: ID
+    isVerified: Boolean
+    location: String
+    messageType: String
+    notes: [ID]
+    parentEventId: String
+    runtime: Float
+    speed: String
+    startDateTime: DateTime
+    time: DateTime
+    trackingId: String
+    updated_by: ID
+    visiblePeople: Int
+}
+
+input IncidentLocationInput {
+    camera: ID
+    created_by: ID
+    location: ID
+    published_at: DateTime
+    updated_by: ID
+}
+
+input IncidentMediaInput {
+    created_by: ID
+    filename: String
+    height: Float
+    path: String
+    published_at: DateTime
+    tag: String
+    type: String
+    updated_by: ID
+    width: Float
+    x: Float
+    y: Float
+}
+
+input InputID {
+    id: ID!
+}
+
+input LocaleInput {
+    code: String
+    created_by: ID
+    name: String
+    updated_by: ID
+}
+
+input LocationInput {
+    coordinate: ID
+    created_by: ID
+    incident_locations: [ID]
+    name: String!
+    published_at: DateTime
+    updated_by: ID
+}
+
+input NoteInput {
+    createDate: DateTime
+    created_by: ID
+    incident: ID
+    published_at: DateTime
+    text: String
+    updated_by: ID
+    users_permissions_user: ID
+}
+
+input NotificationInput {
+    content: String
+    created_by: ID
+    link: String
+    published_at: DateTime
+    title: String
+    type: String
+    updated_by: ID
+}
+
+input RoleInput {
+    created_by: ID
+    description: String
+    name: String!
+    permissions: [ID]
+    type: String
+    updated_by: ID
+    users: [ID]
+}
+
+input UserInput {
+    blocked: Boolean
+    confirmationToken: String
+    confirmed: Boolean
+    created_by: ID
+    detected_histories: [ID]
+    email: String!
+    password: String
+    provider: String
+    resetPasswordToken: String
+    role: ID
+    updated_by: ID
+    username: String!
+}
+
+input UsersPermissionsLoginInput {
+    identifier: String!
+    password: String!
+    provider: String = "local"
+}
+
+input UsersPermissionsRegisterInput {
+    email: String!
+    password: String!
+    username: String!
+}
+
+input createCameraInput {
+    data: CameraInput
+}
+
+input createCoordinateInput {
+    data: CoordinateInput
+}
+
+input createDetectedHistoryInput {
+    data: DetectedHistoryInput
+}
+
+input createIncidentInput {
+    data: IncidentInput
+}
+
+input createIncidentLocationInput {
+    data: IncidentLocationInput
+}
+
+input createIncidentMediaInput {
+    data: IncidentMediaInput
+}
+
+input createLocationInput {
+    data: LocationInput
+}
+
+input createNoteInput {
+    data: NoteInput
+}
+
+input createNotificationInput {
+    data: NotificationInput
+}
+
+input createRoleInput {
+    data: RoleInput
+}
+
+input createUserInput {
+    data: UserInput
+}
+
+input deleteCameraInput {
+    where: InputID
+}
+
+input deleteCoordinateInput {
+    where: InputID
+}
+
+input deleteDetectedHistoryInput {
+    where: InputID
+}
+
+input deleteFileInput {
+    where: InputID
+}
+
+input deleteIncidentInput {
+    where: InputID
+}
+
+input deleteIncidentLocationInput {
+    where: InputID
+}
+
+input deleteIncidentMediaInput {
+    where: InputID
+}
+
+input deleteLocationInput {
+    where: InputID
+}
+
+input deleteNoteInput {
+    where: InputID
+}
+
+input deleteNotificationInput {
+    where: InputID
+}
+
+input deleteRoleInput {
+    where: InputID
+}
+
+input deleteUserInput {
+    where: InputID
+}
+
+input editCameraInput {
+    coordinate: ID
+    created_by: ID
+    incident_locations: [ID]
+    model: String
+    name: String
+    published_at: DateTime
+    serialNo: String
+    updated_by: ID
+}
+
+input editComponentVatesAnnotationInput {
+    h: Int
+    id: ID
+    w: Int
+    x: Int
+    y: Int
+}
+
+input editComponentVatesClassificationInput {
+    confidence: Float
+    id: ID
+    type: String
+}
+
+input editCoordinateInput {
+    camera: ID
+    created_by: ID
+    height: Float
+    location: ID
+    published_at: DateTime
+    type: String
+    updated_by: ID
+    width: Float
+    x: Float
+    y: Float
+}
+
+input editDetectedHistoryInput {
+    created_by: ID
+    detected: String
+    incident: ID
+    published_at: DateTime
+    updated_by: ID
+    user: ID
+}
+
+input editFileInput {
+    alternativeText: String
+    caption: String
+    created_by: ID
+    ext: String
+    formats: JSON
+    hash: String
+    height: Int
+    mime: String
+    name: String
+    previewUrl: String
+    provider: String
+    provider_metadata: JSON
+    related: [ID]
+    size: Float
+    updated_by: ID
+    url: String
+    width: Int
+}
+
+input editIncidentInput {
+    camera: String
+    created_by: ID
+    dateTime: DateTime
+    detected: String
+    detected_histories: [ID]
+    direction: String
+    eventId: String
+    imgs: [ID]
+    incidentAttributes: JSON
+    incidentDescription: String
+    incidentName: String
+    incidentType: String
+    incident_location: ID
+    isVerified: Boolean
+    location: String
+    messageType: String
+    notes: [ID]
+    parentEventId: String
+    runtime: Float
+    speed: String
+    startDateTime: DateTime
+    time: DateTime
+    trackingId: String
+    updated_by: ID
+    visiblePeople: Int
+}
+
+input editIncidentLocationInput {
+    camera: ID
+    created_by: ID
+    location: ID
+    published_at: DateTime
+    updated_by: ID
+}
+
+input editIncidentMediaInput {
+    created_by: ID
+    filename: String
+    height: Float
+    path: String
+    published_at: DateTime
+    tag: String
+    type: String
+    updated_by: ID
+    width: Float
+    x: Float
+    y: Float
+}
+
+input editLocaleInput {
+    code: String
+    created_by: ID
+    name: String
+    updated_by: ID
+}
+
+input editLocationInput {
+    coordinate: ID
+    created_by: ID
+    incident_locations: [ID]
+    name: String
+    published_at: DateTime
+    updated_by: ID
+}
+
+input editNoteInput {
+    createDate: DateTime
+    created_by: ID
+    incident: ID
+    published_at: DateTime
+    text: String
+    updated_by: ID
+    users_permissions_user: ID
+}
+
+input editNotificationInput {
+    content: String
+    created_by: ID
+    link: String
+    published_at: DateTime
+    title: String
+    type: String
+    updated_by: ID
+}
+
+input editRoleInput {
+    created_by: ID
+    description: String
+    name: String
+    permissions: [ID]
+    type: String
+    updated_by: ID
+    users: [ID]
+}
+
+input editUserInput {
+    blocked: Boolean
+    confirmationToken: String
+    confirmed: Boolean
+    created_by: ID
+    detected_histories: [ID]
+    email: String
+    password: String
+    provider: String
+    resetPasswordToken: String
+    role: ID
+    updated_by: ID
+    username: String
+}
+
+input updateCameraInput {
+    data: editCameraInput
+    where: InputID
+}
+
+input updateCoordinateInput {
+    data: editCoordinateInput
+    where: InputID
+}
+
+input updateDetectedHistoryInput {
+    data: editDetectedHistoryInput
+    where: InputID
+}
+
+input updateIncidentInput {
+    data: editIncidentInput
+    where: InputID
+}
+
+input updateIncidentLocationInput {
+    data: editIncidentLocationInput
+    where: InputID
+}
+
+input updateIncidentMediaInput {
+    data: editIncidentMediaInput
+    where: InputID
+}
+
+input updateLocationInput {
+    data: editLocationInput
+    where: InputID
+}
+
+input updateNoteInput {
+    data: editNoteInput
+    where: InputID
+}
+
+input updateNotificationInput {
+    data: editNotificationInput
+    where: InputID
+}
+
+input updateRoleInput {
+    data: editRoleInput
+    where: InputID
+}
+
+input updateUserInput {
+    data: editUserInput
+    where: InputID
+}
+
+
+"The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf)."
+scalar JSON
+
+"A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the `date-time` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar."
+scalar DateTime
+
+"A time string with format: HH:mm:ss.SSS"
+scalar Time
+
+"A date string, such as 2007-12-03, compliant with the `full-date` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar."
+scalar Date
+
+"The `Long` scalar type represents 52-bit integers"
+scalar Long
+
+"The `Upload` scalar type represents a file upload."
+scalar Upload

@@ -8,8 +8,20 @@
     "start": "next start"
   },
   "dependencies": {
+    "@apollo/client": "^3.4.10",
+    "@apollo/react-ssr": "^4.0.0",
+    "graphql": "^15.5.2",
+    "isomorphic-unfetch": "^3.1.0",
+    "js-cookie": "^3.0.0",
+    "jwt-decode": "^3.1.2",
     "next": "11.1.1",
+    "next-apollo": "^5.0.6",
+    "next-with-apollo": "^5.2.1",
+    "prettier": "^2.3.2",
+    "prop-types": "^15.7.2",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-hook-form": "^7.14.1",
+    "strapi-sdk-javascript": "^0.3.3"
   }
 }
